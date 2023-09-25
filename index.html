@@ -1,0 +1,137 @@
+<!-- by christ-offert -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/fontawesome-free-6.4.2-web/css/all.css">
+  <link rel="stylesheet" href="assets/fontawesome-free-6.4.2-web/css/all.min.css">
+  <link rel="stylesheet" href="dist/output.css">
+  <link rel="shortcut icon" href="ico/icn.png" type="image/x-icon">
+  <title>Ankamantatra</title>
+</head>
+
+<body class="bg-black text-white select-none">
+
+  <section id="loading"
+    class="w-screen h-screen fixed top-0 left-0 flex justify-center items-center bg-black/95 backdrop-blur z-[100]">
+
+    <i class="fa fa-spinner text-xl animate-spin text-blue-400"></i>
+
+  </section>
+
+  <section id="" class="container px-5 sm:px-10 h-[12vh] mx-auto flex justify-between relative">
+    <div class="flex-1 w-full h-full flex justify-between items-center">
+      <h2 class="text-xl font-semibold text-blue-400">Ankamantatra</h2>
+    </div>
+
+    <div class="flex-1 w-full h-full flex justify-end items-center gap-10">
+      <ul
+        class="w-full h-full sm:w-fit sm:h-fit font-semibold flex justify-center items-center sm:justify-start gap-1 sm:static absolute top-full left-0 hidden">
+        <li class="">isa azo:</li>
+        <li id="score" class="w-fit sm:w-10">0</li>
+      </ul>
+      <ul class="flex gap-5">
+        <li class=""><button id="restart-btn" class="text-green-400 hover:text-green-500"><i
+              class="fa fa-sync-alt"></i></button></li>
+        <li class=""><button class="text-red-400 hover:text-red-500" onclick="toggleCaption()"><i
+              class="fa fa-power-off"></i></button></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="" class="container h-[78vh] mx-auto flex justify-center items-center relative">
+
+    <div id="caption"
+      class="w-full h-full absolute top-0 left-0 flex flex-col justify-center items-center bg-black z-50">
+      <button class="text-xl font-semibold animate-pulse text-red-500" onclick="toggleCaption()"><i class="fa fa-power-off"></i>
+      </button>
+      <h2 class="text-xl font-semibold text-emerald-500 animate-pulse">Ankamantatra</h2>
+    </div>
+
+    <div id="start-game" class="max-w-sm w-full px-5 h-60 text-center flex flex-col items-center gap-3">
+      <h2 class="text-2xl font-semibold text-emerald-500 animate-pulse">Ankamantatra</h2>
+      <div class="">
+        <p class="">Kilalaon'tsaina Malagasy</p>
+        <p class="">"Andrianiko ny teniko, ny an'ny hafa koa feheziko"</p>
+      </div>
+      <div class="">
+        <p class="messages text-red-500 font-bold uppercase animate-ping hidden">diso <i class="fa fa-face-dizzy"></i>
+        </p>
+        <p class="messages text-blue-500 font-bold uppercase animate-ping hidden">vita <i
+            class="far fa-face-grin-stars"></i></p>
+      </div>
+      <div class="">
+        <button
+          class="start-btn w-fit h-10 px-3 rounded uppercase text-sm text-black font-bold bg-yellow-400 hover:bg-yellow-500">ilalao
+          <i class="fa fa-play"></i></button>
+        <button
+          class="start-btn w-fit h-10 px-3 rounded uppercase text-sm text-black font-bold bg-green-400 hover:bg-green-500 hidden">hamerina
+          <i class="fa fa-sync"></i></button>
+      </div>
+    </div>
+
+    <div id="game" class="w-full max-w-sm h-80 hidden">
+      <h3 id="fanontaniana" class="w-full h-10 mb-3 text-center flex justify-center items-center text-xl font-semibold">
+        fanontaniana
+      </h3>
+      <ul id="" class="w-full h-fit flex flex-col gap-2">
+        <li class="w-full h-10 relative order-1">
+          <button data-valiny=""
+            class="valiny w-full h-full hover:text-blue-400 absolute top-0 left-0">valiny-1</button>
+        </li>
+        <li class="w-full h-10 relative order-2">
+          <button data-valiny=""
+            class="valiny w-full h-full hover:text-blue-400 absolute top-0 left-0">valiny-2</button>
+        </li>
+        <li class="w-full h-10 relative order-3">
+          <button data-valiny=""
+            class="valiny w-full h-full hover:text-blue-400 absolute top-0 left-0">valiny-3</button>
+        </li>
+        <li class="w-full h-10 relative order-4">
+          <button data-valiny=""
+            class="valiny w-full h-full hover:text-blue-400 absolute top-0 left-0">valiny-4</button>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+
+  <footer id="" class=" w-full h-[10vh]">
+    <div class="container h-full px-5 sm:px-10 mx-auto font-semibold text-sm flex justify-between items-center">
+      <h2 class="">2023.</h2>
+      <h2 class="">.nataon'i christ-offert</h2>
+    </div>
+  </footer>
+
+  <script src="src/lockFiles.js"></script>
+  <script src="src/ankamantatra-data.js"></script>
+  <script src="src/index.js"></script>
+  <script>
+
+    function toggleCaption() {
+      document.querySelector('#caption').classList.toggle("hidden");
+      document.querySelectorAll('ul')[0].classList.toggle("hidden");
+    }
+
+    window.onload = () => {
+
+      document.querySelectorAll('.start-btn')[0].onclick = () => {
+        starts(data)
+      }
+      document.querySelectorAll('.start-btn')[1].onclick = () => {
+        null;
+      }
+
+      // setTimeout(() => {
+      document.getElementById('loading').classList.add('hidden');
+      // }, 2000);
+
+    }
+
+  </script>
+</body>
+
+</html>
