@@ -83,7 +83,7 @@ class Ankamantatra {
 
     document.querySelector("#game").addEventListener("click", (e) => {
       let tar = e.target;
-      if (tar.tagName === "BUTTON") {
+      if (tar.tagName === "SPAN") {
         res = tar.getAttribute("data-valiny");
         if (res != 0 && this.arrayVita.length < param.length) {
           this.showQuestion(param);
